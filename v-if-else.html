@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>V-if V-else TEMPLATEVue2</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+	<div id="main">
+		<div class="container">
+			<div class="row">
+				<!--div class="col-md-5">
+					<h3 v-if="!message">Escribe tu sugerencia</h3>
+					<h3 v-if="message">Presiona enter para enviar</h3>
+					<h3 v-else>Presiona enter para enviar</h3>
+					<textarea v-model="message" class="form-control"></textarea>
+				</div-->
+				<div class="col-md-5">
+					<template v-if="!message">
+					<h3 v-if="!message">Escribe tu sugerencia</h3>
+					<p>El equipo de soporte responde en maximo 24 horas</p>
+					<p><em>Podrias utilizar Twitter para comunicarte</em></p>
+					</template>
+					<h3 v-else>Presiona enter para enviar</h3>
+					<textarea v-model="message" class="form-control"></textarea>
+				</div>
+				<div class="col-md-7">
+					<h3>JSON</h3>
+					<pre>
+						{{ $data }}
+					</pre>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+
+	<script type="text/javascript">
+  
+		new Vue({
+
+			el:'#main',
+
+			data: {
+				message: ''
+			},
+
+
+		});
+
+	</script>
+
+</body>
+</html>
